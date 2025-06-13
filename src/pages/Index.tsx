@@ -1,5 +1,5 @@
 
-import { Github, Linkedin, Mail, MapPin, Phone, Globe, Users, MessageCircle, Video } from "lucide-react";
+import { Github, Linkedin, Mail, MapPin, Phone, Globe, Users, MessageCircle, Video, Youtube, Twitter } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
