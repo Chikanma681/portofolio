@@ -1,233 +1,172 @@
 
-import { Github, Linkedin, Mail, MapPin, Phone, Globe, ExternalLink, Calendar, Award } from "lucide-react";
+import { Github, Linkedin, Mail, MapPin, Phone, Globe, Users, MessageCircle, Video } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 
 const Index = () => {
-  const experiences = [
+  const whatIDo = [
+    "Lead Software Engineer at Teep Software",
+    "Course Instructor with 20,000+ students on Udemy", 
+    "Building scalable SaaS platforms and AI solutions",
+    "Content creator sharing programming knowledge"
+  ];
+
+  const services = [
     {
-      title: "Lead Software Engineer",
-      company: "Teep Software",
-      location: "Edmonton, AB",
-      period: "Jun 2024 to present",
-      description: "Engineered a scalable, multi-tenant SaaS platform for gym management, leveraging Next.js, TypeScript, tRPC, and PostgreSQL to deliver a robust solution for diverse gym operators, showcasing both technical expertise and product vision.",
-      achievements: [
-        "Streamlined user experience with key features such as membership management, billing automation, and event scheduling",
-        "Integrated Stripe and Stripe Connect to facilitate secure payment processing and enable seamless tenant payment management",
-        "Designed and implemented Redis-backed session management for authentication, enabling fast, scalable user validation with hashed session tokens and expiration handling",
-        "Containerized applications with Docker, deployed them on Linode VPS servers, configured Caddy as a reverse proxy with rate limiting, implemented Cloudflare for IP blocking, and integrated PostHog for product analytics"
-      ]
+      icon: Users,
+      title: "hire my team",
+      description: "with experience building production ready apps, my team and I can build your next project."
     },
     {
-      title: "Software Engineer",
-      company: "Faculty of Skin",
-      location: "Edmonton, AB", 
-      period: "Mar 2024 to Jun 2024",
-      description: "Developed GCP serverless functions using Node.js and Google BigQuery, improving data management efficiency and ensuring accurate record-keeping.",
-      achievements: [
-        "Implemented Redis caching layer for PDF document retrieval, reducing average load time from 2s to 200ms and improving application performance while handling PDF blobs",
-        "Architected CI/CD pipeline using Google Cloud Run, automating deployments that reduced release time from 2 hours to 15 minutes and eliminated manual deployment errors"
-      ]
+      icon: MessageCircle,
+      title: "book a consultation", 
+      description: "need advice on your product? book a consultation to get clarity on your next steps."
     },
     {
-      title: "Course Instructor", 
-      company: "Udemy Inc.",
-      location: "Remote",
-      period: "May 2020 to Jun 2020",
-      description: "Created and taught two online programming courses reaching over 20,000 students.",
-      achievements: [
-        'Created and taught "The Complete Python 3 Course for Beginners" and "Building AI Chatbots with IBM Watson"',
-        'Maintained high course ratings, with "The Complete Python 3 Course for Beginners" achieving a consistent 4.5/5 star rating for its clarity and practical projects'
-      ]
+      icon: Video,
+      title: "want to sponsor a youtube video?",
+      description: "my channel has amassed over 20k students & covers a wide range of web dev, ui/ux, & ai topics."
     }
   ];
 
-  const projects = [
-    {
-      title: "BiteExpress",
-      period: "Aug 2023",
-      description: "Developed a food delivery application using TypeScript React, Django, and Node.js.",
-      achievements: [
-        "Integrated Stripe API for secure payment processing and managed backend operations with Django",
-        "Deployed the application on AWS EC2 with NGINX, achieving 95% uptime"
-      ]
-    },
-    {
-      title: "HackED 2025 Winner - ArcPlus: NFC Transit Payment System",
-      period: "2025",
-      description: "Developed a digital version of Edmonton's Arc Card for modernized transit payments that enables contactless payments via NFC cards and Apple/Google Wallet passes.",
-      achievements: [
-        "Integrated Stripe for seamless balance reloading and Clerk for secure authentication",
-        "Built with Next.js, tRPC, Docker, and PostgreSQL for the web app; Raspberry Pi and PN532 NFC module for hardware integration"
-      ]
-    },
-    {
-      title: "HackED 2024 Winner",
-      period: "2024", 
-      description: "Won the Department of Chemical and Materials Engineering award for developing ChemQuest, a simulation tool enhancing comprehension of chemical engineering concepts."
-    }
+  const companies = [
+    "Teep Software",
+    "Faculty of Skin", 
+    "Udemy Inc.",
+    "University of Alberta",
+    "HackED Winner"
   ];
 
-  const skills = {
-    "Programming Languages": ["Python", "JavaScript", "TypeScript", "HTML", "CSS", "MATLAB", "Java", "Golang", "C++", "C#"],
-    "Tools & Frameworks": ["React", "Next.js", "tRPC", "Node.js", "Flask", "Django", "Express", "CI/CD (Cloud Run, GitHub Actions)", "Firebase", "Git", "Linux", "ASP.NET Core", "Playwright"]
-  };
+  const skills = ["React", "Next.js", "TypeScript", "Python", "Node.js", "tRPC", "PostgreSQL", "Docker", "AWS", "Stripe"];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-900 via-gray-800 to-black text-white">
-      {/* Header */}
-      <div className="container mx-auto px-6 py-12">
-        {/* Profile Section */}
-        <div className="text-center mb-16">
-          <div className="w-32 h-32 bg-gradient-to-br from-blue-500 to-purple-600 rounded-full mx-auto mb-6 flex items-center justify-center text-4xl font-bold">
+    <div className="min-h-screen bg-black text-white">
+      <div className="container mx-auto px-6 py-16 max-w-4xl">
+        {/* Header Section */}
+        <div className="flex flex-col md:flex-row items-start gap-8 mb-16">
+          {/* Profile Image */}
+          <div className="w-20 h-20 bg-gradient-to-br from-blue-500 to-purple-600 rounded-full flex items-center justify-center text-2xl font-bold flex-shrink-0">
             CC
           </div>
-          <h1 className="text-4xl md:text-5xl font-bold mb-2">Chikanma Chika-Onuegbu</h1>
-          <p className="text-xl text-gray-300 mb-6">Lead Software Engineer</p>
-          <p className="text-gray-400 max-w-3xl mx-auto mb-8 leading-relaxed">
-            I'm a software engineer and content creator passionate about building modern web applications, 
-            UI/UX and AI solutions while sharing my knowledge through tutorials and project walkthroughs.
-          </p>
           
-          {/* Contact Info */}
-          <div className="flex flex-wrap justify-center gap-6 mb-8 text-sm">
+          {/* Main Content */}
+          <div className="flex-1">
+            <div className="flex flex-col md:flex-row md:justify-between md:items-start mb-6">
+              <div>
+                <h1 className="text-2xl font-bold mb-1">Chikanma Chika-Onuegbu</h1>
+                <p className="text-gray-400">Software Engineer @ Teep Software</p>
+              </div>
+              
+              {/* Social Links */}
+              <div className="flex gap-3 mt-4 md:mt-0">
+                <Button variant="ghost" size="sm" className="p-2 h-auto text-gray-400 hover:text-white">
+                  <Youtube className="w-5 h-5" />
+                </Button>
+                <Button variant="ghost" size="sm" className="p-2 h-auto text-gray-400 hover:text-white">
+                  <Mail className="w-5 h-5" />
+                </Button>
+                <Button variant="ghost" size="sm" className="p-2 h-auto text-gray-400 hover:text-white">
+                  <Twitter className="w-5 h-5" />
+                </Button>
+                <Button variant="ghost" size="sm" className="p-2 h-auto text-gray-400 hover:text-white">
+                  <Linkedin className="w-5 h-5" />
+                </Button>
+              </div>
+            </div>
+            
+            <p className="text-gray-300 leading-relaxed mb-8 max-w-3xl">
+              I'm a software engineer and content creator passionate about building modern web applications, 
+              UI/UX and AI solutions while sharing my knowledge through tutorials and project walkthroughs.
+            </p>
+            
+            {/* What I do */}
+            <div className="mb-12">
+              <h2 className="text-lg font-semibold mb-4">What I do:</h2>
+              <ul className="space-y-2">
+                {whatIDo.map((item, index) => (
+                  <li key={index} className="text-gray-300">
+                    • {item}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        {/* Services Section */}
+        <div className="mb-16">
+          <div className="flex items-center gap-3 mb-8">
+            <h2 className="text-xl font-semibold">services</h2>
+            <span className="text-2xl">🛠️</span>
+          </div>
+          
+          <div className="grid md:grid-cols-2 gap-6">
+            {services.map((service, index) => (
+              <Card key={index} className="bg-gray-900/50 border-gray-800 hover:bg-gray-900/70 transition-colors">
+                <CardContent className="p-6">
+                  <div className="flex items-start gap-4">
+                    <div className="p-2 bg-gray-800 rounded-lg">
+                      <service.icon className="w-5 h-5 text-gray-400" />
+                    </div>
+                    <div>
+                      <h3 className="font-semibold mb-2">{service.title}</h3>
+                      <p className="text-gray-400 text-sm leading-relaxed">
+                        {service.description}
+                      </p>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </div>
+
+        {/* Skills */}
+        <div className="mb-16">
+          <h2 className="text-lg font-semibold mb-4">Technologies & Skills</h2>
+          <div className="flex flex-wrap gap-2">
+            {skills.map((skill, index) => (
+              <Badge key={index} variant="secondary" className="bg-gray-800 text-gray-300 hover:bg-gray-700">
+                {skill}
+              </Badge>
+            ))}
+          </div>
+        </div>
+
+        {/* Companies */}
+        <div className="mb-16">
+          <h2 className="text-xl font-semibold text-center mb-8">Worked with Companies like</h2>
+          <div className="flex flex-wrap justify-center items-center gap-8 opacity-60">
+            {companies.map((company, index) => (
+              <div key={index} className="text-gray-400 font-medium">
+                {company}
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Contact Info */}
+        <div className="text-center">
+          <div className="flex flex-wrap justify-center gap-6 text-sm text-gray-400">
             <div className="flex items-center gap-2">
-              <MapPin className="w-4 h-4 text-blue-400" />
+              <MapPin className="w-4 h-4" />
               <span>Edmonton, AB</span>
             </div>
             <div className="flex items-center gap-2">
-              <Mail className="w-4 h-4 text-blue-400" />
-              <a href="mailto:chikanmaonuegbu@gmail.com" className="text-blue-400 hover:text-blue-300 transition-colors">
+              <Mail className="w-4 h-4" />
+              <a href="mailto:chikanmaonuegbu@gmail.com" className="hover:text-white transition-colors">
                 chikanmaonuegbu@gmail.com
               </a>
             </div>
             <div className="flex items-center gap-2">
-              <Phone className="w-4 h-4 text-blue-400" />
-              <span>(587) 501-6656</span>
-            </div>
-            <div className="flex items-center gap-2">
-              <Globe className="w-4 h-4 text-blue-400" />
-              <a href="https://www.teepsoftware.com" className="text-blue-400 hover:text-blue-300 transition-colors">
+              <Globe className="w-4 h-4" />
+              <a href="https://www.teepsoftware.com" className="hover:text-white transition-colors">
                 www.teepsoftware.com
               </a>
             </div>
           </div>
-
-          {/* Social Links */}
-          <div className="flex justify-center gap-4">
-            <Button variant="outline" size="sm" className="bg-transparent border-gray-600 text-white hover:bg-gray-800">
-              <Github className="w-4 h-4 mr-2" />
-              Chikanma681
-            </Button>
-            <Button variant="outline" size="sm" className="bg-transparent border-gray-600 text-white hover:bg-gray-800">
-              <Linkedin className="w-4 h-4 mr-2" />
-              LinkedIn
-            </Button>
-          </div>
         </div>
-
-        {/* Experience Section */}
-        <section className="mb-16">
-          <h2 className="text-3xl font-bold mb-8 text-center">Experience</h2>
-          <div className="space-y-8">
-            {experiences.map((exp, index) => (
-              <Card key={index} className="bg-gray-800/50 border-gray-700 backdrop-blur-sm">
-                <CardContent className="p-6">
-                  <div className="flex flex-col md:flex-row md:justify-between md:items-start mb-4">
-                    <div>
-                      <h3 className="text-xl font-semibold text-blue-400">{exp.title}</h3>
-                      <p className="text-lg text-gray-300">{exp.company} - {exp.location}</p>
-                    </div>
-                    <div className="flex items-center gap-2 text-gray-400 mt-2 md:mt-0">
-                      <Calendar className="w-4 h-4" />
-                      <span>{exp.period}</span>
-                    </div>
-                  </div>
-                  <p className="text-gray-300 mb-4">{exp.description}</p>
-                  <ul className="space-y-2">
-                    {exp.achievements.map((achievement, i) => (
-                      <li key={i} className="text-gray-400 text-sm leading-relaxed">
-                        • {achievement}
-                      </li>
-                    ))}
-                  </ul>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </section>
-
-        {/* Projects Section */}
-        <section className="mb-16">
-          <h2 className="text-3xl font-bold mb-8 text-center">Projects</h2>
-          <div className="grid md:grid-cols-2 gap-6">
-            {projects.map((project, index) => (
-              <Card key={index} className="bg-gray-800/50 border-gray-700 backdrop-blur-sm">
-                <CardContent className="p-6">
-                  <div className="flex justify-between items-start mb-4">
-                    <h3 className="text-xl font-semibold text-blue-400">{project.title}</h3>
-                    <span className="text-gray-400 text-sm">{project.period}</span>
-                  </div>
-                  {project.title.includes("Winner") && (
-                    <div className="flex items-center gap-2 mb-3">
-                      <Award className="w-4 h-4 text-yellow-400" />
-                      <span className="text-yellow-400 text-sm font-medium">Hackathon Winner</span>
-                    </div>
-                  )}
-                  <p className="text-gray-300 mb-4">{project.description}</p>
-                  {project.achievements && (
-                    <ul className="space-y-2">
-                      {project.achievements.map((achievement, i) => (
-                        <li key={i} className="text-gray-400 text-sm leading-relaxed">
-                          • {achievement}
-                        </li>
-                      ))}
-                    </ul>
-                  )}
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </section>
-
-        {/* Skills Section */}
-        <section className="mb-16">
-          <h2 className="text-3xl font-bold mb-8 text-center">Skills</h2>
-          <div className="grid md:grid-cols-2 gap-8">
-            {Object.entries(skills).map(([category, skillList]) => (
-              <Card key={category} className="bg-gray-800/50 border-gray-700 backdrop-blur-sm">
-                <CardContent className="p-6">
-                  <h3 className="text-lg font-semibold text-blue-400 mb-4">{category}</h3>
-                  <div className="flex flex-wrap gap-2">
-                    {skillList.map((skill, index) => (
-                      <Badge key={index} variant="secondary" className="bg-gray-700 text-gray-200 hover:bg-gray-600">
-                        {skill}
-                      </Badge>
-                    ))}
-                  </div>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </section>
-
-        {/* Education Section */}
-        <section className="mb-16">
-          <h2 className="text-3xl font-bold mb-8 text-center">Education</h2>
-          <Card className="bg-gray-800/50 border-gray-700 backdrop-blur-sm">
-            <CardContent className="p-6">
-              <h3 className="text-xl font-semibold text-blue-400">University of Alberta</h3>
-              <p className="text-lg text-gray-300">BSc in Engineering</p>
-              <p className="text-gray-400 mt-2">• Received the Faculty of Engineering Gold Scholarship for academic excellence</p>
-            </CardContent>
-          </Card>
-        </section>
-
-        {/* Footer */}
-        <footer className="text-center text-gray-400">
-          <p>Last updated in June 2025</p>
-        </footer>
       </div>
     </div>
   );
