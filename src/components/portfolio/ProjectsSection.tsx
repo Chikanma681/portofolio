@@ -1,5 +1,4 @@
-
-import { ExternalLink } from "lucide-react";
+import { ExternalLink, Building2, Code2, Trophy, GraduationCap, Youtube, Cpu, BookOpen } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 
 interface Project {
@@ -8,84 +7,113 @@ interface Project {
   link: string;
   type: string;
   tech: string[];
+  icon: React.ComponentType<{ className?: string }>;
 }
 
 const projects: Project[] = [
   {
-    name: "Teep Software",
-    description: "A comprehensive multitenant gym management software designed for gym owners. Built with React TypeScript, Node.js, and PostgreSQL, featuring member management, billing automation, class scheduling, and real-time analytics. Supports multiple gym locations with role-based access control and custom branding.",
+    name: "Lead Software Engineer @ Teep Software",
+    description: "Engineered a scalable, multi-tenant SaaS platform for gym management, leveraging Next.js, TypeScript, tRPC, and PostgreSQL to deliver a robust solution for diverse gym operators.",
     link: "https://teepsoftware.com",
-    type: "SaaS Platform",
-    tech: ["React", "TypeScript", "Node.js", "PostgreSQL", "AWS"]
+    type: "Work Experience",
+    tech: ["Next.js", "TypeScript", "tRPC", "PostgreSQL", "Stripe", "Redis", "Docker"],
+    icon: Building2
   },
   {
-    name: "BitPayress",
-    description: "A full-stack food delivery application featuring real-time order tracking, payment integration, and restaurant management. Built with TypeScript React frontend, Django REST API backend, and Node.js microservices architecture.",
-    link: "#",
-    type: "Web Application",
-    tech: ["TypeScript", "React", "Django", "Node.js", "PostgreSQL"]
+    name: "Software Engineer @ Faculty of Skin",
+    description: "Developed GCP serverless functions using Node.js and BigQuery, improving data management efficiency. Implemented a Redis caching layer for PDF document retrieval, reducing average load time from 2s to 200ms.",
+    link: "www.facultyofskin.com",
+    type: "Work Experience",
+    tech: ["Node.js", "Google Cloud", "BigQuery", "Redis", "CI/CD"],
+    icon: Code2
   },
   {
-    name: "BlueScreen",
-    description: "Digital version of Edmonton's Arc Card for seamless transit payments. Features NFC integration, balance management, and trip history tracking with a modern, accessible user interface.",
-    link: "#",
-    type: "Mobile App",
-    tech: ["React Native", "TypeScript", "Firebase", "NFC"]
+    name: "Arc Plus - NFC Transit System",
+    description: "Developed a Raspberry Pi-based NFC transit payment system with real-time card reading and transaction processing. Features include secure payment handling and instant validation.",
+    link: "https://github.com/Chikanma681/arc-plus",
+    type: "Hardware & Software",
+    tech: ["Python", "Raspberry Pi", "NFC", "TypeScript", "React"],
+    icon: Cpu
   },
   {
-    name: "Programming YouTube Channel",
-    description: "Educational content covering modern web development, including React tutorials, full-stack project builds, and programming best practices. Over 20,000+ students across various platforms.",
-    link: "https://youtube.com/@chikanma",
+    name: "Udemy Course Creator",
+    description: "Comprehensive Python programming course on Udemy with over 20,000 enrolled students. Covers fundamentals to advanced concepts with hands-on projects.",
+    link: "https://www.udemy.com/course/python-beginners-course/?couponCode=ST16MT230625G1",
     type: "Education",
-    tech: ["Teaching", "Content Creation", "Video Production"]
-  }
+    tech: ["Python", "Teaching", "Programming"],
+    icon: BookOpen
+  },
+  {
+    name: "Programming Tutorial Channel",
+    description: "YouTube channel focused on teaching programming concepts, software development best practices, and coding tutorials.",
+    link: "https://www.youtube.com/@chikanma5021",
+    type: "Content Creation",
+    tech: ["Education", "Programming", "Tutorials"],
+    icon: Youtube
+  },
+//   {
+//     name: "Portfolio Website",
+//     description: "Modern portfolio website built with React and TypeScript, featuring a responsive design and smooth animations.",
+//     link: "https://github.com/chikanma681",
+//     type: "Web Development",
+//     tech: ["React", "TypeScript", "Tailwind CSS"],
+//     icon: Code2
+//   }
 ];
 
 const ProjectsSection = () => {
   return (
     <div className="mb-20">
       <div className="flex items-center gap-3 mb-12">
-        <h2 className="text-white font-semibold text-xl">Featured Projects</h2>
+        <h2 className="text-white font-semibold text-xl">Featured Projects & Experience</h2>
         <span className="text-2xl">🚀</span>
       </div>
       
-      <div className="grid gap-8">
+      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
         {projects.map((project, index) => (
-          <div key={index} className="bg-gray-900/20 border border-gray-800/50 rounded-xl p-8 hover:bg-gray-900/30 transition-all duration-300 hover:border-gray-700/50">
-            <div className="flex items-start justify-between mb-4">
-              <div className="flex-1">
-                <div className="flex items-center gap-3 mb-3">
-                  <h3 className="text-white font-semibold text-lg">{project.name}</h3>
-                  <Badge variant="secondary" className="text-xs font-medium">
-                    {project.type}
-                  </Badge>
+          <a 
+            key={index}
+            href={project.link === "#" ? undefined : project.link}
+            target={project.link === "#" ? undefined : "_blank"}
+            rel={project.link === "#" ? undefined : "noopener noreferrer"}
+            className="group relative block rounded-xl p-8 overflow-hidden backdrop-blur-sm border border-white/10 hover:border-white/20 transition-all duration-300 flex flex-col items-center text-center"
+          >
+            {/* Gradient background */}
+            <div className="absolute inset-0 bg-gradient-to-br from-blue-500/5 via-transparent to-purple-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+            
+            {/* Content */}
+            <div className="relative">
+              <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-full p-4 mb-6 w-16 h-16 flex items-center justify-center transform group-hover:scale-110 group-hover:rotate-3 transition-transform duration-300">
+                <project.icon className="w-8 h-8 text-white transform group-hover:scale-110 transition-transform duration-300" />
+              </div>
+              <div>
+                <div className="flex items-center justify-center gap-2 mb-2">
+                  <h3 className="text-white font-semibold text-lg capitalize group-hover:text-blue-400 transition-colors duration-300">
+                    {project.name}
+                  </h3>
+                  {project.link !== "#" && (
+                    <ExternalLink className="w-4 h-4 text-white/50 group-hover:text-white/90 transition-colors duration-300" />
+                  )}
                 </div>
-                <p className="text-gray-300 leading-relaxed mb-4">
+                <Badge variant="secondary" className="bg-white/10 text-white/80 backdrop-blur-sm text-xs font-medium mb-4">
+                  {project.type}
+                </Badge>
+                <p className="text-gray-300/90 leading-relaxed text-sm mb-4">
                   {project.description}
                 </p>
-                <div className="flex flex-wrap gap-2">
+                <div className="flex flex-wrap gap-2 justify-center">
                   {project.tech.map((tech, techIndex) => (
                     <span 
                       key={techIndex} 
-                      className="text-xs bg-gray-800/50 text-gray-300 px-3 py-1 rounded-full border border-gray-700/50"
+                      className="text-xs bg-white/5 text-white/70 px-3 py-1 rounded-full border border-white/10 backdrop-blur-sm group-hover:border-white/20 transition-colors duration-300"
                     >
                       {tech}
                     </span>
                   ))}
                 </div>
               </div>
-              {project.link !== "#" && (
-                <a
-                  href={project.link}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-gray-400 hover:text-white transition-colors ml-6 flex-shrink-0"
-                >
-                  <ExternalLink className="w-5 h-5" />
-                </a>
-              )}
             </div>
-          </div>
+          </a>
         ))}
       </div>
     </div>

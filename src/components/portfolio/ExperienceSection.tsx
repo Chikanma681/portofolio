@@ -1,10 +1,9 @@
-
 const companies: string[] = [
   "Teep Software",
   "Faculty of Skin", 
   "Udemy Inc.",
   "University of Alberta",
-  "HackED Winner"
+  "HackED 2024 & 2025 Winner"
 ];
 
 const ExperienceSection = () => {
