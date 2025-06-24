@@ -1,5 +1,5 @@
 
-import { Github, Linkedin, Mail, MapPin, Phone, Globe, Users, MessageCircle, Video, Youtube, Twitter } from "lucide-react";
+import { Github, Linkedin, Mail, MapPin, Phone, Globe, Users, MessageCircle, Video, Youtube, Twitter, ExternalLink } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -10,6 +10,33 @@ const Index = () => {
     "Course Instructor with 20,000+ students on Udemy", 
     "Building scalable SaaS platforms and AI solutions",
     "Content creator sharing programming knowledge"
+  ];
+
+  const projects = [
+    {
+      name: "Teep Software",
+      description: "Building scalable SaaS platforms and AI solutions",
+      link: "https://teepsoftware.com",
+      type: "Company"
+    },
+    {
+      name: "BitPayress",
+      description: "Food delivery application using TypeScript React, Django, and Node.js",
+      link: "#",
+      type: "Project"
+    },
+    {
+      name: "BlueScreen",
+      description: "Digital version of Edmonton's Arc Card for transit payments",
+      link: "#",
+      type: "Project"
+    },
+    {
+      name: "YouTube Channel",
+      description: "Programming tutorials and project walkthroughs",
+      link: "https://youtube.com/@chikanma",
+      type: "Content"
+    }
   ];
 
   const services = [
@@ -38,6 +65,13 @@ const Index = () => {
     "HackED Winner"
   ];
 
+  const socialLinks = [
+    { icon: Youtube, link: "https://youtube.com/@chikanma", label: "YouTube" },
+    { icon: Mail, link: "mailto:chikanmaonuegbu@gmail.com", label: "Email" },
+    { icon: Twitter, link: "https://twitter.com/chikanma", label: "Twitter" },
+    { icon: Github, link: "https://github.com/chikanma", label: "GitHub" }
+  ];
+
   return (
     <div className="min-h-screen bg-black text-white">
       <div className="container mx-auto px-6 py-16 max-w-4xl">
@@ -58,10 +92,18 @@ const Index = () => {
               
               {/* Social Links */}
               <div className="flex gap-4">
-                <Youtube className="w-5 h-5 text-gray-400 hover:text-white cursor-pointer transition-colors" />
-                <Mail className="w-5 h-5 text-gray-400 hover:text-white cursor-pointer transition-colors" />
-                <Twitter className="w-5 h-5 text-gray-400 hover:text-white cursor-pointer transition-colors" />
-                <Github className="w-5 h-5 text-gray-400 hover:text-white cursor-pointer transition-colors" />
+                {socialLinks.map((social, index) => (
+                  <a
+                    key={index}
+                    href={social.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-gray-400 hover:text-white transition-colors"
+                    aria-label={social.label}
+                  >
+                    <social.icon className="w-5 h-5" />
+                  </a>
+                ))}
               </div>
             </div>
             
@@ -82,6 +124,44 @@ const Index = () => {
                 ))}
               </ul>
             </div>
+          </div>
+        </div>
+
+        {/* Projects Section */}
+        <div className="mb-16">
+          <div className="flex items-center gap-3 mb-8">
+            <h2 className="text-white font-medium">featured projects</h2>
+            <span className="text-lg">🚀</span>
+          </div>
+          
+          <div className="grid gap-4">
+            {projects.map((project, index) => (
+              <div key={index} className="bg-gray-900/30 border border-gray-800 rounded-lg p-6 hover:bg-gray-900/50 transition-colors">
+                <div className="flex items-start justify-between">
+                  <div className="flex-1">
+                    <div className="flex items-center gap-3 mb-2">
+                      <h3 className="text-white font-medium text-sm">{project.name}</h3>
+                      <Badge variant="secondary" className="text-xs">
+                        {project.type}
+                      </Badge>
+                    </div>
+                    <p className="text-gray-400 text-sm leading-relaxed">
+                      {project.description}
+                    </p>
+                  </div>
+                  {project.link !== "#" && (
+                    <a
+                      href={project.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-gray-400 hover:text-white transition-colors ml-4"
+                    >
+                      <ExternalLink className="w-4 h-4" />
+                    </a>
+                  )}
+                </div>
+              </div>
+            ))}
           </div>
         </div>
 
