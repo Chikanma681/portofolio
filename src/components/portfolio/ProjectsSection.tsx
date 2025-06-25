@@ -22,7 +22,7 @@ const projects: Project[] = [
   {
     name: "Software Engineer @ Faculty of Skin",
     description: "Developed GCP serverless functions using Node.js and BigQuery, improving data management efficiency. Implemented a Redis caching layer for PDF document retrieval, reducing average load time from 2s to 200ms.",
-    link: "www.facultyofskin.com",
+    link: "https://www.facultyofskin.com",
     type: "Work Experience",
     tech: ["Node.js", "Google Cloud", "BigQuery", "Redis", "CI/CD"],
     icon: Code2
