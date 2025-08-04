@@ -1,5 +1,5 @@
 import React from "react";
-import { ExternalLink, Building2, Code2, Youtube, Cpu, BookOpen, Github, Twitter, Mail, User, Briefcase, FolderOpen } from "lucide-react";
+import { ExternalLink, Building2, Code2, Youtube, Cpu, BookOpen, Github, Twitter, Mail, User, Briefcase, FolderOpen, Terminal } from "lucide-react";
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 import { Badge } from "@/components/ui/badge";
 
@@ -193,6 +193,102 @@ const TerminalPortfolio = () => {
                       Email
                     </a>
                   </div>
+                </div>
+              </div>
+            </section>
+
+            {/* Skills Section */}
+            <section className="border-b border-white/10 pb-8">
+              <div className="mb-6 flex items-center gap-3">
+                <Terminal className="h-5 w-5 text-orange-400" />
+                <h2 className="text-lg font-semibold text-white">$ cat skills.json</h2>
+              </div>
+              
+              <div className="space-y-6">
+                {/* Programming Languages */}
+                <div className="rounded-xl border border-white/10 bg-zinc-900/40 p-5">
+                  <h3 className="mb-4 flex items-center gap-2 text-sm font-semibold text-white">
+                    <span className="text-blue-400">"programming_languages":</span>
+                    <span className="text-white/60">[</span>
+                  </h3>
+                  <div className="ml-4 flex flex-wrap gap-2">
+                    {[
+                      "Python", "JavaScript", "TypeScript", "HTML", "CSS", "MATLAB", 
+                      "Java", "Golang", "C++", "C#"
+                    ].map((lang, index) => (
+                      <span
+                        key={index}
+                        className="rounded-lg border border-white/10 bg-white/5 px-3 py-1.5 text-xs text-white/80 transition-colors hover:border-blue-400/50 hover:bg-blue-400/10"
+                      >
+                        "{lang}"
+                      </span>
+                    ))}
+                  </div>
+                  <div className="mt-2 text-white/60">]</div>
+                </div>
+
+                {/* Tools & Frameworks */}
+                <div className="rounded-xl border border-white/10 bg-zinc-900/40 p-5">
+                  <h3 className="mb-4 flex items-center gap-2 text-sm font-semibold text-white">
+                    <span className="text-purple-400">"tools_and_frameworks":</span>
+                    <span className="text-white/60">[</span>
+                  </h3>
+                  <div className="ml-4 space-y-3">
+                    {/* Frontend & Backend */}
+                    <div>
+                      <h4 className="mb-2 text-xs text-green-400">// Frontend & Backend</h4>
+                      <div className="flex flex-wrap gap-2">
+                        {[
+                          "React", "Next.js", "tRPC", "Node.js", "Flask", "Django", 
+                          "Express", ".NET", "ASP.NET Core"
+                        ].map((tool, index) => (
+                          <span
+                            key={index}
+                            className="rounded-lg border border-white/10 bg-white/5 px-3 py-1.5 text-xs text-white/80 transition-colors hover:border-purple-400/50 hover:bg-purple-400/10"
+                          >
+                            "{tool}"
+                          </span>
+                        ))}
+                      </div>
+                    </div>
+
+                    {/* Databases & Cloud */}
+                    <div>
+                      <h4 className="mb-2 text-xs text-green-400">// Databases & Cloud</h4>
+                      <div className="flex flex-wrap gap-2">
+                        {[
+                          "MongoDB", "PostgreSQL", "Microsoft SQL Server", "Entity Framework",
+                          "AWS EC2", "AWS S3", "Firebase", "Redis"
+                        ].map((tool, index) => (
+                          <span
+                            key={index}
+                            className="rounded-lg border border-white/10 bg-white/5 px-3 py-1.5 text-xs text-white/80 transition-colors hover:border-purple-400/50 hover:bg-purple-400/10"
+                          >
+                            "{tool}"
+                          </span>
+                        ))}
+                      </div>
+                    </div>
+
+                    {/* DevOps & Tools */}
+                    <div>
+                      <h4 className="mb-2 text-xs text-green-400">// DevOps & Tools</h4>
+                      <div className="flex flex-wrap gap-2">
+                        {[
+                          "Git", "Linux", "CI/CD", "Cloud Run", "GitHub Actions", 
+                          "Playwright", "Docker"
+                        ].map((tool, index) => (
+                          <span
+                            key={index}
+                            className="rounded-lg border border-white/10 bg-white/5 px-3 py-1.5 text-xs text-white/80 transition-colors hover:border-purple-400/50 hover:bg-purple-400/10"
+                          >
+                            "{tool}"
+                          </span>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+                  <div className="mt-2 text-white/60">]</div>
                 </div>
               </div>
             </section>
