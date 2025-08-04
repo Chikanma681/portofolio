@@ -55,6 +55,27 @@ const workExperience: WorkExperience[] = [
 ];
 
 const projects: Project[] = [
+{
+    name: "RentScape - Property Rental Platform",
+    description: "Full-stack rental marketplace connecting landlords and tenants, similar to RentFaster. Features role-based authorization system distinguishing between landlord and tenant accounts, property listing management, advanced search filters, and secure messaging system. Built with React, Redux for state management, and MongoDB for scalable data storage.",
+    link: "https://github.com/chikanma681/rentscape",
+    tech: ["React", "Redux", "Node.js", "Express", "MongoDB", "Session-based Auth", "Role-Based Access"],
+    icon: Building2
+  },
+  {
+    name: "ContactCRM - Enterprise Contact Management",
+    description: "Full-stack contact management application built with ASP.NET Core 8.0 and React. Features complete CRUD operations, RESTful APIs with Swagger documentation, Entity Framework Core migrations, server-side pagination, dynamic filtering, and Docker containerization for scalable deployment.",
+    link: "https://github.com/chikanma681/contactsPage",
+    tech: ["ASP.NET Core", "React", "Entity Framework", "PostgreSQL", "Docker", "Swagger", "FluentValidation"],
+    icon: Code2
+  },
+  {
+    name: "BiteExpress - Food Delivery Platform",
+    description: "Full-stack food delivery application similar to DoorDash, featuring real-time order tracking, secure payment processing with Stripe API, and scalable image storage using AWS S3. Built with TypeScript, React, Django, and Node.js with 95% uptime on AWS EC2.",
+    link: "https://github.com/chikanma681/bite",
+    tech: ["TypeScript", "React", "Django", "Node.js", "Stripe", "AWS S3", "AWS EC2", "NGINX"],
+    icon: Code2
+  },
   {
     name: "Arc Plus - NFC Transit System",
     description: "Developed a Raspberry Pi-based NFC transit payment system with real-time card reading and transaction processing. Features include secure payment handling and instant validation.",
