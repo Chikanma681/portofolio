@@ -248,10 +248,11 @@ const TerminalPortfolio = () => {
                   </a>
                 ))}
               </div>
+
             </section>
 
             {/* Projects Section */}
-            <section>
+            <section className="border-b border-white/10 pb-8">
               <div className="mb-6 flex items-center gap-3">
                 <FolderOpen className="h-5 w-5 text-purple-400" />
                 <h2 className="text-lg font-semibold text-white">$ ls projects/</h2>
@@ -300,12 +301,9 @@ const TerminalPortfolio = () => {
                 ))}
               </div>
             </section>
-          </div>
-        </div>
-      </div>
 
-{/* Skills Section */}
-<section className="border-b border-white/10 pb-8">
+            {/* Skills Section - Now Last */}
+            <section>
               <div className="mb-6 flex items-center gap-3">
                 <Terminal className="h-5 w-5 text-orange-400" />
                 <h2 className="text-lg font-semibold text-white">$ cat skills.json</h2>
@@ -399,6 +397,10 @@ const TerminalPortfolio = () => {
                 </div>
               </div>
             </section>
+          </div>
+        </div>
+      </div>
+
       {/* Pointer position CSS var for neon hover */}
       <script
         dangerouslySetInnerHTML={{
