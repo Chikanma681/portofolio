@@ -19,7 +19,6 @@ interface WorkExperience {
   tech: string[];
   icon: React.ComponentType<{ className?: string }>;
 }
-
 const workExperience: WorkExperience[] = [
   {
     company: "Teep Software",
@@ -36,6 +35,22 @@ const workExperience: WorkExperience[] = [
     link: "https://www.facultyofskin.com",
     tech: ["Node.js", "Google Cloud", "BigQuery", "Redis", "CI/CD"],
     icon: Code2
+  },
+  {
+    company: "Udemy",
+    position: "Course Creator",
+    description: "Comprehensive Python programming course on Udemy with over 20,000 enrolled students. Covers fundamentals to advanced concepts with hands-on projects.",
+    link: "https://www.udemy.com/course/python-beginners-course/?couponCode=ST16MT230625G1",
+    tech: ["Python", "Teaching", "Programming"],
+    icon: BookOpen
+  },
+  {
+    company: "YouTube",
+    position: "Programming Educator",
+    description: "Created and maintained a programming education channel, delivering high-quality tutorials and programming concepts to a growing audience of developers.",
+    link: "https://www.youtube.com/@chikanma5021",
+    tech: ["Education", "Programming", "Content Creation"],
+    icon: Youtube
   }
 ];
 
@@ -46,20 +61,6 @@ const projects: Project[] = [
     link: "https://github.com/Chikanma681/arc-plus",
     tech: ["Python", "Raspberry Pi", "NFC", "TypeScript", "React"],
     icon: Cpu
-  },
-  {
-    name: "Udemy Course Creator",
-    description: "Comprehensive Python programming course on Udemy with over 20,000 enrolled students. Covers fundamentals to advanced concepts with hands-on projects.",
-    link: "https://www.udemy.com/course/python-beginners-course/?couponCode=ST16MT230625G1",
-    tech: ["Python", "Teaching", "Programming"],
-    icon: BookOpen
-  },
-  {
-    name: "Programming Tutorial Channel",
-    description: "YouTube channel focused on teaching programming concepts, software development best practices, and coding tutorials.",
-    link: "https://www.youtube.com/@chikanma5021",
-    tech: ["Education", "Programming", "Tutorials"],
-    icon: Youtube
   }
 ];
 
