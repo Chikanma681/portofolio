@@ -63,60 +63,132 @@ const projects: Project[] = [
 
 const ProjectsSection = () => {
   return (
-    <div className="mb-20">
-      <div className="flex items-center gap-3 mb-12">
-        <h2 className="text-white font-semibold text-xl">Featured Projects & Experience</h2>
-        <span className="text-2xl">🚀</span>
-      </div>
-      
-      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {projects.map((project, index) => (
-          <a 
-            key={index}
-            href={project.link === "#" ? undefined : project.link}
-            target={project.link === "#" ? undefined : "_blank"}
-            rel={project.link === "#" ? undefined : "noopener noreferrer"}
-            className="group relative block rounded-xl p-8 overflow-hidden backdrop-blur-sm border border-white/10 hover:border-white/20 transition-all duration-300 flex flex-col items-center text-center"
-          >
-            {/* Gradient background */}
-            <div className="absolute inset-0 bg-gradient-to-br from-blue-500/5 via-transparent to-purple-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-            
-            {/* Content */}
-            <div className="relative">
-              <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-full p-4 mb-6 w-16 h-16 flex items-center justify-center transform group-hover:scale-110 group-hover:rotate-3 transition-transform duration-300">
-                <project.icon className="w-8 h-8 text-white transform group-hover:scale-110 transition-transform duration-300" />
-              </div>
-              <div>
-                <div className="flex items-center justify-center gap-2 mb-2">
-                  <h3 className="text-white font-semibold text-lg capitalize group-hover:text-blue-400 transition-colors duration-300">
-                    {project.name}
-                  </h3>
-                  {project.link !== "#" && (
-                    <ExternalLink className="w-4 h-4 text-white/50 group-hover:text-white/90 transition-colors duration-300" />
-                  )}
+    <section
+      aria-labelledby="projects-heading"
+      className="mb-20 font-mono tracking-tight"
+      style={{
+        fontFamily:
+          'ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace',
+      }}
+    >
+      {/* Terminal window wrapper */}
+      <div className="mx-auto max-w-7xl overflow-hidden rounded-2xl border border-white/10 bg-zinc-950/70 shadow-[0_0_0_1px_rgba(255,255,255,0.04)] backdrop-blur-xl">
+        {/* Title bar with macOS traffic lights */}
+        <div className="relative flex items-center justify-between border-b border-white/10 bg-zinc-900/60 px-4 py-2">
+          <div className="flex items-center gap-2">
+            <span className="h-3 w-3 rounded-full bg-[#ff5f56] shadow-[0_0_0_1px_rgba(0,0,0,0.35)]" aria-hidden="true" />
+            <span className="h-3 w-3 rounded-full bg-[#ffbd2e] shadow-[0_0_0_1px_rgba(0,0,0,0.35)]" aria-hidden="true" />
+            <span className="h-3 w-3 rounded-full bg-[#27c93f] shadow-[0_0_0_1px_rgba(0,0,0,0.35)]" aria-hidden="true" />
+          </div>
+          <div className="pointer-events-none select-none text-xs text-white/60">~/projects — zsh</div>
+        </div>
+
+        {/* Scanline + vignette overlays */}
+        <div className="relative">
+          <div
+            className="pointer-events-none absolute inset-0"
+            style={{
+              backgroundImage:
+                'repeating-linear-gradient(to bottom, rgba(255,255,255,0.03), rgba(255,255,255,0.03) 1px, transparent 1px, transparent 3px)',
+            }}
+            aria-hidden
+          />
+          <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/30" aria-hidden />
+
+          {/* Header */}
+          <div className="relative flex items-center gap-3 px-6 pt-6 pb-4">
+            <h2 id="projects-heading" className="text-lg font-semibold text-white">
+              Featured Projects & Experience
+            </h2>
+            <span className="text-xl" role="img" aria-label="rocket">
+              🚀
+            </span>
+          </div>
+
+          {/* Subtle grid background */}
+          <div
+            className="absolute inset-0 -z-10"
+            style={{
+              backgroundImage:
+                'radial-gradient(circle at 20% 10%, rgba(56,189,248,0.08), transparent 35%), radial-gradient(circle at 80% 30%, rgba(167,139,250,0.08), transparent 40%), linear-gradient(to right, rgba(255,255,255,0.04) 1px, transparent 1px), linear-gradient(to bottom, rgba(255,255,255,0.04) 1px, transparent 1px)',
+              backgroundSize: 'auto, auto, 22px 22px, 22px 22px',
+              backgroundPosition: 'center',
+            }}
+            aria-hidden
+          />
+
+          {/* Projects grid */}
+          <div className="relative grid gap-5 px-6 pb-8 md:grid-cols-2 lg:grid-cols-3">
+            {projects.map((project, index) => (
+              <a
+                key={index}
+                href={project.link === "#" ? undefined : project.link}
+                target={project.link === "#" ? undefined : "_blank"}
+                rel={project.link === "#" ? undefined : "noopener noreferrer"}
+                className="group relative block overflow-hidden rounded-xl border border-white/10 bg-zinc-900/60 p-5 transition-all duration-300 hover:border-white/20 hover:shadow-[0_10px_40px_rgba(59,130,246,0.1)]"
+              >
+                {/* Neon hover ring */}
+                <div className="pointer-events-none absolute inset-0 opacity-0 blur-xl transition-opacity duration-500 group-hover:opacity-100" style={{ background: 'radial-gradient(600px circle at var(--x,50%) var(--y,50%), rgba(99,102,241,0.15), transparent 40%)' }} />
+
+                {/* Card content */}
+                <div className="relative flex h-full flex-col items-center text-center">
+                  <div className="mb-4 flex h-16 w-16 items-center justify-center rounded-2xl border border-white/15 bg-white/5 backdrop-blur-sm transition-transform duration-300 group-hover:scale-110 group-hover:rotate-2">
+                    <project.icon className="h-8 w-8 text-white" />
+                  </div>
+
+                  <div className="mb-2 flex items-center justify-center gap-2">
+                    <h3 className="line-clamp-2 text-base font-semibold text-white transition-colors group-hover:text-sky-300">
+                      {project.name}
+                    </h3>
+                    {project.link !== "#" && (
+                      <ExternalLink className="h-4 w-4 text-white/60 transition-colors group-hover:text-white" />
+                    )}
+                  </div>
+
+                  <Badge
+                    variant="secondary"
+                    className="mb-3 rounded border border-white/10 bg-white/10 px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wider text-white/80 backdrop-blur-sm"
+                  >
+                    {project.type}
+                  </Badge>
+
+                  <p className="mb-4 line-clamp-4 text-xs leading-relaxed text-white/80">
+                    {project.description}
+                  </p>
+
+                  <div className="mt-auto flex flex-wrap justify-center gap-2">
+                    {project.tech.map((tech, techIndex) => (
+                      <span
+                        key={techIndex}
+                        className="rounded-full border border-white/10 bg-white/5 px-2.5 py-1 text-[10px] text-white/75 transition-colors group-hover:border-white/20"
+                      >
+                        {tech}
+                      </span>
+                    ))}
+                  </div>
                 </div>
-                <Badge variant="secondary" className="bg-white/10 text-white/80 backdrop-blur-sm text-xs font-medium mb-4">
-                  {project.type}
-                </Badge>
-                <p className="text-gray-300/90 leading-relaxed text-sm mb-4">
-                  {project.description}
-                </p>
-                <div className="flex flex-wrap gap-2 justify-center">
-                  {project.tech.map((tech, techIndex) => (
-                    <span 
-                      key={techIndex} 
-                      className="text-xs bg-white/5 text-white/70 px-3 py-1 rounded-full border border-white/10 backdrop-blur-sm group-hover:border-white/20 transition-colors duration-300"
-                    >
-                      {tech}
-                    </span>
-                  ))}
-                </div>
-              </div>
-            </div>
-          </a>
-        ))}
+              </a>
+            ))}
+          </div>
+        </div>
       </div>
-    </div>
+
+      {/* Pointer position CSS var for neon hover */}
+      <script
+        dangerouslySetInnerHTML={{
+          __html: `
+            document.addEventListener('pointermove', (e) => {
+              const target = e.target.closest('[data-neon]') || e.target.closest('a.group');
+              if (!target) return;
+              const rect = target.getBoundingClientRect();
+              const x = e.clientX - rect.left; const y = e.clientY - rect.top;
+              target.style.setProperty('--x', x + 'px');
+              target.style.setProperty('--y', y + 'px');
+            }, { passive: true });
+          `,
+        }}
+      />
+    </section>
   );
 };
 
